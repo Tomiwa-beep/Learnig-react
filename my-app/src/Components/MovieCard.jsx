@@ -2,7 +2,7 @@ import {useState} from "react";
 import heartFilled from "../assets/movies/heartFilled.png";
 import heartopen from "../assets/movies/heartopen.png";
 
-function MovieCard({title, description, image, rating, ontop}) {
+function MovieCard({title, description, image, rating, OnTop}) {
   const ratingClass = ["text-bg-danger", "text-bg-success", "text-bg-warning"];
   const [hasLiked, setHasLiked] = useState(false);
   let setRating =
@@ -17,14 +17,6 @@ function MovieCard({title, description, image, rating, ontop}) {
       <div className="card" style={{width: "18rem"}}>
         <div className="position-relative">
           <img src={image} className="card-img-top  " alt={title} />
-          <img
-            src={ontop}
-            style={{width: "75px", height: "75px"}}
-            alt="trailer"
-            className="
-        
-            position-absolute top-50 start-50 translate-middle   rounded-circle"
-          />
         </div>
         <div className="card-body">
           <h5 className="card-title">{title}</h5>
@@ -39,6 +31,11 @@ function MovieCard({title, description, image, rating, ontop}) {
               )}
             </button>
           </p>
+          <button
+            className="btn btn-primary"
+            onClick={alert("tralier coming soon")}>
+            {OnTop}
+          </button>
         </div>
       </div>
     </>

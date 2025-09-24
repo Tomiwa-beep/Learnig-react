@@ -20,7 +20,7 @@ const movies = [
       "Lorem ipsum dolor sit animi at alias excepturi sint amet ut fugiat deserunt cum. Quo aliquid ad, corporis ametpellat odit quibusdam enim debitis!",
     rating: 4.0,
     image: Pic1,
-    ontop: trailer,
+    OnTop: "watch trailer",
   },
   {
     title: "My Second Card",
@@ -28,6 +28,7 @@ const movies = [
       "Lorem ipsum dolor sit animi at alias excepturi sint amet ut fugiat deserunt cum. Quo aliquid ad, corporis ametpellat odit quibusdam enim debitis!",
     rating: 6.0,
     image: Pic2,
+    OnTop: "watch trailer",
   },
 
   {
@@ -36,6 +37,7 @@ const movies = [
       "Lorem ipsum dolor sit animi at alias excepturi sint amet ut fugiat deserunt cum. Quo aliquid ad, corporis ametpellat odit quibusdam enim debitis!",
     rating: 3.0,
     image: Pic3,
+    OnTop: "watch trailer",
   },
 
   {
@@ -44,6 +46,7 @@ const movies = [
       "Lorem ipsum dolor sit animi at alias excepturi sint amet ut fugiat deserunt cum. Quo aliquid ad, corporis ametpellat odit quibusdam enim debitis!",
     rating: 5.0,
     image: Pic4,
+    OnTop: "watch trailer",
   },
 
   {
@@ -52,6 +55,7 @@ const movies = [
       "Lorem ipsum dolor sit animi at alias excepturi sint amet ut fugiat deserunt cum. Quo aliquid ad, corporis ametpellat odit quibusdam enim debitis!",
     rating: 9.0,
     image: Pic5,
+    OnTop: "watch trailer",
   },
 
   {
@@ -60,6 +64,7 @@ const movies = [
       "Lorem ipsum dolor sit animi at alias excepturi sint amet ut fugiat deserunt cum. Quo aliquid ad, corporis ametpellat odit quibusdam enim debitis!",
     rating: 5.0,
     image: Pic3,
+    OnTop: "watch trailer",
   },
 
   {
@@ -68,6 +73,7 @@ const movies = [
       "Lorem ipsum dolor sit animi at alias excepturi sint amet ut fugiat deserunt cum. Quo aliquid ad, corporis ametpellat odit quibusdam enim debitis!",
     rating: 8.5,
     image: Pic2,
+    OnTop: "watch trailer",
   },
 
   {
@@ -76,22 +82,23 @@ const movies = [
       "Lorem ipsum dolor sit animi at alias excepturi sint amet ut fugiat deserunt cum. Quo aliquid ad, corporis ametpellat odit quibusdam enim debitis!",
     rating: 7.8,
     image: Pic5,
+    OnTop: "watch trailer",
   },
 ];
 
 function App() {
-  // const [searchQuery, setSearchQuery] = useState("");
-  // const handleSearch = (e) => {
-  //   e.preventDefault();
-  //   alert(searchQuery);
-  // };
+  const [searchQuery, setSearchQuery] = useState("");
+  const handleSearch = (e) => {
+    e.preventDefault();
+    alert(searchQuery);
+  };
 
   return (
     <>
       <div className="container mt-8">
         <h2 className="mt-4">Movie List</h2>
         <div className="d-flex flex-wrap">
-          {/* <form onSubmit={handleSearch}>
+          <form onSubmit={handleSearch}>
             <input
               type="text"
               placeholder="Search a for a movie"
@@ -103,9 +110,9 @@ function App() {
             <button type="submit" className="btn btn-primary">
               Search
             </button>
-          </form> */}
-
-          {/* <div className="row">
+          </form>{" "}
+          *
+          <div className="row">
             {movies.map((movie, index) => {
               return (
                 <div
@@ -118,13 +125,13 @@ function App() {
                       description={movie.description}
                       rating={movie.rating}
                       image={movie.image}
+                      OnTop={movie.OnTop}
                     />
                   )}
                 </div>
               );
             })}
-          </div> */}
-
+          </div>
           <UserForm />
         </div>
       </div>
