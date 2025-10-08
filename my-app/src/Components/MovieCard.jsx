@@ -11,6 +11,9 @@ function MovieCard({title, description, image, rating, OnTop}) {
       : rating >= 5
       ? "text-bg-warning"
       : "text-bg-danger";
+}
+const clickTrailer = () => {
+  alert("Trailer coming soon");
 
   return (
     <>
@@ -22,7 +25,9 @@ function MovieCard({title, description, image, rating, OnTop}) {
           <h5 className="card-title">{title}</h5>
           <p className="card-text">{description}</p>
           <p className="card-text">
-            <span className={setRating}>{rating}/10</span>
+            <span className={`badge rounded-pill${setRating}`}>
+              {rating}/10
+            </span>
             <button onClick={() => setHasLiked(!hasLiked)}>
               {hasLiked ? (
                 <img src={heartFilled} width={20} height={20} alt={title} />
@@ -31,15 +36,13 @@ function MovieCard({title, description, image, rating, OnTop}) {
               )}
             </button>
           </p>
-          <button
-            className="btn btn-primary"
-            onClick={alert("tralier coming soon")}>
-            {OnTop}
+          <button onClick={clickTrailer} className="btn btn-primary">
+            Watch Trailer
           </button>
         </div>
       </div>
     </>
   );
-}
+};
 
 export default MovieCard;
